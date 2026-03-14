@@ -1,5 +1,5 @@
+![Demo Screenshot](demo2.png)
 ![Demo Screenshot](demo.png)
-
 
 Designed a real-time multilingual speech translation pipeline processing streaming audio with sub-second >1s latency using Web Audio API and WebSockets for continuous data transmission.
 
