@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real-Time Translation App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mode Selector -->
+  <div>
+    <button id="modeLive" class="active">Live Mic</button>
+    <button id="modeUpload">Upload File</button>
+  </div>
+
+  <!-- Live Controls -->
+  <div id="liveControls">
+    <button id="startLive">Start Recording</button>
+    <button id="stopLive" class="hidden">Stop Recording</button>
+  </div>
+
+  <!-- Upload Controls -->
+  <div id="uploadControls" class="hidden">
+    <input type="file" id="fileInput" accept="audio/*" />
+    <button id="uploadBtn">Upload</button>
+  </div>
+
+  <hr />
+
+  <!-- Output Sections -->
+  <div>
+    <h3>🎤 Original (Hindi)</h3>
+    <p id="asrText"></p>
+  </div>
+
+  <div>
+    <h3>🌍 English Translation</h3>
+    <p id="englishText"></p>
+  </div>
+
+  <div>
+    <h3>🌍 Czech Translation</h3>
+    <p id="czechText"></p>
+  </div>
+
+  <!-- Scripts: Order matters -->
+  <script src="dom.js"></script>
+  <script src="app.js"></script>
+  <script src="upload.js"></script>
+
+</body>
+</html>
