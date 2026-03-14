@@ -1,0 +1,5 @@
+.env
+venv/
+__pycache__/
+*.pyc
+Python-3.14.2/

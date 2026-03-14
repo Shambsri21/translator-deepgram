@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Real-Time Translation App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="scene">
+    <div class="bg-beam" aria-hidden="true"></div>
+
+    <section class="assistant-card" aria-label="Translation assistant">
+      <div class="mode-select" role="tablist" aria-label="Input mode">
+        <button id="modeLive" class="active" type="button">Live Mic</button>
+        <button id="modeUpload" type="button">Upload File</button>
+      </div>
+
+      <div class="message-block">
+        <p class="message-text">Speak in Hindi and get live translations instantly.</p>
+      </div>
+
+      <div id="liveControls" class="controls live-controls">
+        <button id="startLive" class="orb-btn" type="button" aria-label="Start Recording">
+          <span class="mic-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+              <path d="M12 15.5C10.07 15.5 8.5 13.93 8.5 12V6.5C8.5 4.57 10.07 3 12 3C13.93 3 15.5 4.57 15.5 6.5V12C15.5 13.93 13.93 15.5 12 15.5Z" fill="currentColor"/>
+              <path d="M18 11.75C18 15.06 15.31 17.75 12 17.75C8.69 17.75 6 15.06 6 11.75" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              <path d="M12 17.75V21" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              <path d="M9.5 21H14.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+        <button id="stopLive" class="orb-btn stop-btn hidden" type="button" aria-label="Stop Recording">
+          <span aria-hidden="true">■</span>
+        </button>
+      </div>
+
+      <div id="uploadControls" class="controls upload-controls hidden">
+        <label class="file-pill" for="fileInput">
+          <span>Choose audio file</span>
+          <input type="file" id="fileInput" accept="audio/*" />
+        </label>
+        <button id="uploadBtn" class="pill-btn" type="button">Upload</button>
+      </div>
+
+      <canvas id="waveCanvas" class="wave-canvas" width="500" height="72" aria-hidden="true"></canvas>
+
+      <section class="output" aria-live="polite">
+        <article class="bubble">
+          <h3>Original (Hindi)</h3>
+          <p id="asrText" class="text"></p>
+        </article>
+
+        <article class="bubble">
+          <h3>English</h3>
+          <p id="englishText" class="text"></p>
+        </article>
+
+        <article class="bubble">
+          <h3>Czech</h3>
+          <p id="czechText" class="text"></p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script src="dom.js"></script>
+  <script src="app.js"></script>
+  <script src="upload.js"></script>
+</body>
+</html>

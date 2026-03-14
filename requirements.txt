@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-deepgram-sdk
-websockets
-requests
-numpy
-python-dotenv

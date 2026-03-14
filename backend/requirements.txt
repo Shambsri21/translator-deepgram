@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+deepgram-sdk==3.10.1
+websockets
+requests
+numpy
+python-dotenv
+python-multipart
